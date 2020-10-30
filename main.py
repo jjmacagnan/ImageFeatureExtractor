@@ -181,8 +181,8 @@ for folder in folders:
         # features = momentsHu(image)
         # features = histogram(image)
         # features = hog2(image)
-        # features = zernike(image)
-        features = SIFT(image)
+        features = zernike(image)
+        # features = SIFT(image)
         # features = CreateGLCM(image)
 
         # fd, hog_image = hog(image, orientations=9, pixels_per_cell=(8, 8), cells_per_block=(2, 2), visualize=True, multichannel=True)
