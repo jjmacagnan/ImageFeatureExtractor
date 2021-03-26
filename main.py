@@ -134,7 +134,7 @@ t0 = time.time()
 
 
 # Ir até o caminho em que estamos atualmente
-folders_path = os.path.realpath('/Users/admin/Documents/Jasiel/Database/CBIS-DDSM/Training/Calc') + '/'
+folders_path = os.path.realpath('/Users/jjmacagnan/Documents/Jasiel/Databases/aPascal & aYahoo Datasets/ayahoo_test_images') + '/'
 # obter todas as pastas no caminho
 folders = glob(folders_path + '**/')
 # vetor de caracterpistica que vai receber as imagens
@@ -142,10 +142,12 @@ img_files = []
 
 # abre arquivo csv para escrita
 # abre o arquivo para salvar as características das imagens
-output = open("ORB.csv", "w")
+output = open("zernike.csv", "w")
 output1 = open("datasel.txt", "w")
 countImage = 0
 countPasta = 0
+
+img_files.sort()
 
 # Obter apenas os arquivos de imagem em cada pasta
 for folder in folders:
@@ -197,8 +199,9 @@ for folder in folders:
         # para cada atributo da imagem
         features = ['{:f}'.format(f) for f in features]
         # Salve o vetor de característica em um arquivo
-        output.write("%s,%s\n" % (label[14:30:], ",".join(features)))
+        output.write("%s,%s\n" % (image_ID,",".join(features)))
         # output1.write("%s %s %s\n" % (countImage, countPasta, " ".join(features)))
+        print(label)
 
         features1.append(features1)
         labels.append(label)
