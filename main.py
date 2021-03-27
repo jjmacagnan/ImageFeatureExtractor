@@ -134,7 +134,7 @@ t0 = time.time()
 
 
 # Ir até o caminho em que estamos atualmente
-folders_path = os.path.realpath('/Users/jjmacagnan/Documents/Jasiel/Databases/aPascal & aYahoo Datasets/ayahoo_test_images') + '/'
+folders_path = os.path.realpath('/Users/jjmacagnan/Documents/Jasiel/Databases/aPascal & aYahoo Datasets/bbox_images') + '/'
 # obter todas as pastas no caminho
 folders = glob(folders_path + '**/')
 # vetor de caracterpistica que vai receber as imagens
@@ -147,7 +147,6 @@ output1 = open("datasel.txt", "w")
 countImage = 0
 countPasta = 0
 
-img_files.sort()
 
 # Obter apenas os arquivos de imagem em cada pasta
 for folder in folders:
@@ -165,6 +164,9 @@ for folder in folders:
     percent = countPasta / len(folders) * 100
     percent_text = '\nCriando vetores de características ' + str(int(percent)) + '%'
     print(percent_text, end='\r', flush=True)
+
+    img_files.sort()
+
     for i, files_path in enumerate(img_files):
         # read image file
 
@@ -201,7 +203,7 @@ for folder in folders:
         # Salve o vetor de característica em um arquivo
         output.write("%s,%s\n" % (image_ID,",".join(features)))
         # output1.write("%s %s %s\n" % (countImage, countPasta, " ".join(features)))
-        print(label)
+        print(image_ID)
 
         features1.append(features1)
         labels.append(label)
