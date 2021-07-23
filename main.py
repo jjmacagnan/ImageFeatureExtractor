@@ -134,7 +134,7 @@ t0 = time.time()
 
 
 # Ir até o caminho em que estamos atualmente
-folders_path = os.path.realpath('/Users/jjmacagnan/Documents/Jasiel/Databases/aPascal & aYahoo Datasets/bbox_images') + '/'
+folders_path = os.path.realpath('/Users/jjmacagnan/Documents/Jasiel/Databases/mammoset/images_raw/DDSM_TRAIN') + '/'
 # obter todas as pastas no caminho
 folders = glob(folders_path + '**/')
 # vetor de caracterpistica que vai receber as imagens
@@ -142,7 +142,7 @@ img_files = []
 
 # abre arquivo csv para escrita
 # abre o arquivo para salvar as características das imagens
-output = open("zernike.csv", "w")
+output = open("zernike_P.csv", "w")
 output1 = open("datasel.txt", "w")
 countImage = 0
 countPasta = 0
